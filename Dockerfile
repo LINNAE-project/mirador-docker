@@ -10,5 +10,5 @@ RUN curl -OJL https://github.com/ProjectMirador/mirador/raw/develop/index.html
 
 FROM nginx:alpine as server
 COPY --from=downloader /build /usr/share/nginx/html/build
-COPY --from=downloader /index.html /usr/share/nginx/html/index.html
+COPY index.html /usr/share/nginx/html/
 EXPOSE 80
